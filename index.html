@@ -257,31 +257,42 @@
     .nav-hamburger.open span:nth-child(2) { opacity: 0; }
     .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    /* Mobile drawer */
+    /* Mobile drawer — full screen */
     .nav-drawer {
       display: none;
       position: fixed;
       top: 58px;
       left: 0; right: 0;
+      bottom: 0;
+      height: calc(100vh - 58px);
       background: var(--white);
-      border-bottom: var(--border);
-      padding: 16px 20px 24px;
+      border-top: var(--border);
+      padding: 32px var(--pad-x) 48px;
       z-index: 99;
       flex-direction: column;
-      gap: 0;
+      overflow-y: auto;
     }
-    .nav-drawer.open { display: flex; }
-    .nav-drawer a {
-      display: block;
-      font-size: 15px;
-      color: var(--gray-700);
+    .nav-drawer.open {
+      display: flex;
+      animation: drawerIn 0.22s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .nav-drawer a:not(.btn) {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--black);
       text-decoration: none;
-      padding: 14px 0;
+      padding: 18px 0;
       border-bottom: var(--border);
+      transition: color 0.15s;
     }
-    .nav-drawer a:last-of-type { border-bottom: none; }
+    .nav-drawer a:not(.btn):hover { color: var(--red); }
+    .nav-drawer a:not(.btn):last-of-type { border-bottom: none; }
     .nav-drawer .btn {
-      margin-top: 16px;
+      margin-top: auto;
+      padding-top: 0;
       justify-content: center;
       width: 100%;
     }
@@ -731,7 +742,7 @@
       font-size: 9.5px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #555;
+      color: #999;
       margin-bottom: 20px;
       display: block;
     }
@@ -785,7 +796,7 @@
     }
     .sim-right-note {
       font-size: 11px;
-      color: #555;
+      color: #888;
       text-align: center;
       margin-top: 10px;
       line-height: 1.5;
@@ -887,10 +898,12 @@
       padding: 0 var(--pad-x);
     }
     .contact-eyebrow { margin-bottom: 28px; }
+    /* gray-700 sur gray-100 → ~8,7:1 (WCAG AA) au lieu de gray-500 → 4,4:1 */
+    #contact .label { color: var(--gray-700); }
     .contact-tagline {
       font-size: 13px;
       font-style: italic;
-      color: var(--gray-500);
+      color: var(--gray-700);
       margin-bottom: 20px;
     }
     .contact-title {
@@ -906,7 +919,7 @@
     .contact-title .dot { color: var(--red); }
     .contact-sub {
       font-size: 15px;
-      color: var(--gray-500);
+      color: var(--gray-700);
       margin-bottom: 40px;
       max-width: 440px;
       line-height: 1.7;
@@ -955,6 +968,10 @@
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    @keyframes drawerIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
     nav           { animation: heroIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
     .hero-eyebrow { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.06s both; }
@@ -981,7 +998,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .anim, nav, .hero-eyebrow, .hero-title, .hero-headline,
-      .hero-tagline, .hero-cta, .hero-quote {
+      .hero-tagline, .hero-cta, .hero-quote, .nav-drawer.open {
         animation: none !important;
         transition: none !important;
         opacity: 1 !important;
@@ -1016,7 +1033,8 @@
       .nav-hamburger { display: flex; }
 
       /* Hero */
-      .hero-title { font-size: clamp(36px, 12vw, 52px); letter-spacing: -0.03em; }
+      #hero { min-height: 90vh; display: flex; align-items: center; padding: 48px 0; }
+      .hero-title { font-size: clamp(13vw, 14vw, 18vw); letter-spacing: -0.03em; line-height: 0.88; }
       .hero-quote { grid-template-columns: 1fr; gap: 8px; }
       .hero-quote-label { writing-mode: horizontal-tb; transform: none; }
       .hero-cta { flex-direction: column; align-items: stretch; }
@@ -1097,12 +1115,12 @@
       <p class="hero-headline">Transformation &amp; optimisation des TPE/PME par l'IA.</p>
       <p class="hero-tagline">Accompagnement opérationnel, technique et pédagogique —<br>de la découverte au déploiement concret.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn">Échange découverte — gratuit</a>
+        <a href="#contact" class="btn">Premier échange — gratuit</a>
         <a href="#methode" class="btn btn-outline">Voir la méthode</a>
       </div>
       <blockquote class="hero-quote" aria-label="Notre posture">
         <span class="hero-quote-label">Posture</span>
-        <p>"On arrive avec des questions, et un regard ; pas avec une solution miracle à déployer absolument."</p>
+        <p>"On arrive avec des questions et un regard extérieur — pas avec une solution toute faite à déployer coûte que coûte."</p>
       </blockquote>
     </div>
   </section>
@@ -1113,23 +1131,23 @@
       <div class="section-header">
         <span class="label">Cible</span>
         <h2 class="section-title">Pour qui, pour quoi.</h2>
-        <p class="section-sub">On travaille avec des entreprises qui fonctionnent déjà — et qui veulent faire mieux.</p>
+        <p class="section-sub">On travaille avec des entreprises qui fonctionnent — et qui veulent aller plus loin.</p>
       </div>
       <div class="cible-grid">
         <div class="cible-col">
           <div class="cible-col-label"><span class="label">On travaille avec</span></div>
           <ul class="cible-list" role="list">
-            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>TPE/PME qui se portent bien, avec du business à gérer — et un potentiel de gain de temps et de rentabilité via l'IA.</span></li>
-            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Dirigeants qui veulent "y aller" mais ne savent pas par où commencer.</span></li>
-            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Équipes prêtes à adopter de nouveaux outils avec un accompagnement humain et progressif.</span></li>
+            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>TPE/PME qui fonctionnent bien et qui ont identifié des marges de progression — sur le temps, les coûts ou la capacité commerciale.</span></li>
+            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Dirigeants convaincus par le potentiel de l'IA, mais qui ne savent pas encore par où commencer.</span></li>
+            <li><span class="marker marker-yes" aria-hidden="true">✦</span><span>Équipes prêtes à intégrer de nouveaux usages, avec un accompagnement humain et progressif.</span></li>
           </ul>
         </div>
         <div class="cible-col">
           <div class="cible-col-label"><span class="label">Pas pour</span></div>
           <ul class="cible-list" role="list">
-            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les grandes entreprises avec des équipes tech internes.</span></li>
+            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les grandes entreprises disposant d'équipes techniques en interne.</span></li>
             <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les entreprises en difficulté structurelle.</span></li>
-            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Ceux qui cherchent une solution miracle, clé en main, sans implication de leur part.</span></li>
+            <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les structures qui recherchent une solution prête à l'emploi sans vouloir s'y impliquer.</span></li>
           </ul>
         </div>
       </div>
@@ -1142,14 +1160,14 @@
       <div class="section-header">
         <span class="label">Méthode</span>
         <h2 class="section-title">4 étapes. Pas de transformation théorique.</h2>
-        <p class="section-sub">Des petits pas concrets, mesurables, adaptés à votre rythme.</p>
+        <p class="section-sub">Des actions concrètes, mesurables, menées à votre rythme.</p>
       </div>
       <div class="methode-steps">
         <div class="step">
           <span class="step-num">01</span>
           <div class="step-body">
             <h3>Échange &amp; découverte</h3>
-            <p>Entretien 30 min + questionnaire préalable. On identifie ensemble si l'IA peut vous aider — et comment. Retour avec un premier regard sur votre situation.</p>
+            <p>Un entretien de 30 minutes, précédé d'un court questionnaire. On évalue ensemble si l'IA est pertinente pour vous — et on vous dit honnêtement où se situent vos opportunités.</p>
             <span class="step-price">Gratuit — 30 min en visio ou en personne</span>
           </div>
         </div>
@@ -1157,15 +1175,15 @@
           <span class="step-num">02</span>
           <div class="step-body">
             <h3>Diagnostic terrain</h3>
-            <p>1 à 2 jours selon la taille. On vient dans votre entreprise, on observe vos processus. Livrable 5–10 pages : constat, besoins, cas d'usages, estimation ROI, devis implantation.</p>
-            <span class="step-price">500–1 000 € — Chez vous</span>
+            <p>Une à deux journées dans vos locaux. On observe, on questionne, on cartographie. Livrable de 5 à 10 pages : diagnostic complet, cas d'usage prioritaires, estimation du ROI et devis d'implantation.</p>
+            <span class="step-price">500–1 000 € — Dans vos locaux</span>
           </div>
         </div>
         <div class="step">
           <span class="step-num">03</span>
           <div class="step-body">
             <h3>Déploiement du 1<sup>er</sup> cas d'usage</h3>
-            <p>Sur la base du diagnostic. On commence par le cas à plus fort impact. Déploiement selon ROI visé — temps, coûts, ressources. Devis défini à l'étape 2.</p>
+            <p>Sur la base du diagnostic, on déploie le cas d'usage à plus fort retour. Chaque décision est guidée par le ROI visé — temps récupéré, coûts réduits, ressources libérées. Le devis est celui établi à l'étape 2.</p>
             <span class="step-price">Selon devis — 2 à 6 semaines</span>
           </div>
         </div>
@@ -1173,7 +1191,7 @@
           <span class="step-num">04</span>
           <div class="step-body">
             <h3>Mesure &amp; optimisation</h3>
-            <p>3 mois inclus : suivi des performances, ajustements mineurs, 1 appel par mois. On suit les résultats avec vous. Abonnement optionnel ensuite.</p>
+            <p>Trois mois de suivi inclus : un point mensuel, des ajustements au fil de l'usage et un tableau de bord partagé. La continuité est possible sur abonnement, sans engagement.</p>
             <span class="step-price">250–300 €/mois — Tableau de bord inclus</span>
           </div>
         </div>
@@ -1201,10 +1219,10 @@
           </div>
           <div class="offre-card-body">
             <h3>Automatisations</h3>
-            <p>Mise en place de flux automatisés pour réduire les tâches répétitives. Gain de temps mesurable dès les premières semaines.</p>
+            <p>Identification et automatisation des tâches à faible valeur ajoutée. Les résultats se mesurent dès les premières semaines d'utilisation.</p>
             <ul class="offre-features">
-              <li>Analyse des processus chronophages</li>
-              <li>Mise en place de flux automatisés</li>
+              <li>Cartographie des tâches répétitives</li>
+              <li>Déploiement de flux de travail automatisés</li>
               <li>Formation et prise en main des équipes</li>
             </ul>
           </div>
@@ -1253,7 +1271,7 @@
       </div>
 
       <p class="tarifs-note" style="margin-top:24px">
-        <strong>Gouvernance des données :</strong> le client décide où vont ses données — hébergement via OVH, Hostinger ou autre selon le projet (IA locale, service Anthropic, OpenAI, etc.). Le diagnostic est déduit du devis d'implantation si le client signe pour la suite.
+        <strong>Gouvernance des données :</strong> vous choisissez où sont hébergées vos données — dans votre infrastructure, via OVH, Hostinger ou tout autre prestataire, selon le projet. Le coût du diagnostic est déduit du devis d'implantation si vous poursuivez avec nous.
       </p>
     </div>
   </section>
@@ -1264,7 +1282,7 @@
       <div class="section-header">
         <span class="label">Simulateur</span>
         <h2 class="section-title">Estimez votre potentiel.</h2>
-        <p class="section-sub">Quelques paramètres pour visualiser ce que l'IA peut concrètement représenter pour votre structure.</p>
+        <p class="section-sub">Ajustez quelques paramètres pour obtenir une première estimation de ce que l'IA pourrait représenter pour votre entreprise.</p>
       </div>
 
       <div class="sim-panels">
@@ -1290,7 +1308,7 @@
 
           <div class="sim-slider-group">
             <div class="sim-slider-header">
-              <label for="sim-hours">Heures chronophages / semaine / collaborateur</label>
+              <label for="sim-hours">Heures perdues en tâches répétitives / semaine / collaborateur</label>
               <span class="sim-slider-val" id="sim-hours-val">3h</span>
             </div>
             <input type="range" id="sim-hours" class="sim-range" min="1" max="20" step="1" value="3" aria-label="Heures perdues par semaine" />
@@ -1317,7 +1335,7 @@
               <p class="sim-metric-val" id="sim-economie">—</p>
               <div class="sim-metric-label">
                 <strong>d'économie directe estimée / an</strong>
-                sur les tâches automatisables identifiées (taux d'automatisation 40%)
+                sur la base d'un taux d'automatisation estimé à 40 % des tâches identifiées
               </div>
             </div>
             <div class="sim-metric">
@@ -1331,21 +1349,21 @@
               <p class="sim-metric-val" id="sim-gain">—</p>
               <div class="sim-metric-label">
                 <strong>gain de capacité commerciale</strong>
-                en libérant le temps commercial des tâches administratives
+                en réorientant le temps libéré vers la relation client et le développement
               </div>
             </div>
             <div class="sim-metric">
               <p class="sim-metric-val" id="sim-roi">—</p>
               <div class="sim-metric-label">
                 <strong>délai estimé de retour sur investissement</strong>
-                basé sur le coût d'une mission .kairos calibrée à votre taille
+                sur la base du coût indicatif d'une mission adaptée à votre structure
               </div>
             </div>
           </div>
 
           <div class="sim-right-cta">
             <a href="#contact" class="btn btn-red">Vérifier mon potentiel exact →</a>
-            <p class="sim-right-note">Estimation conservative. Votre diagnostic terrain affinera ces chiffres à votre réalité.</p>
+            <p class="sim-right-note">Estimation indicative. Le diagnostic terrain précisera ces projections selon votre organisation réelle.</p>
           </div>
         </div>
 
@@ -1359,7 +1377,7 @@
       <div class="section-header">
         <span class="label">FAQ</span>
         <h2 class="section-title">Questions fréquentes.</h2>
-        <p class="section-sub">Tout ce qu'on nous pose avant de démarrer.</p>
+        <p class="section-sub">Les questions qu'on nous pose le plus souvent avant de démarrer.</p>
       </div>
       <div class="faq-list">
         <details class="faq-item">
@@ -1368,7 +1386,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Oui, complètement. C'est un appel de 30 minutes — on échange sur votre activité, vos processus, vos frustrations du quotidien. À l'issue, on vous dit honnêtement si l'IA peut vous aider, et comment. Si ce n'est pas le bon moment ou le bon sujet, on vous le dit aussi.
+            Oui, sans condition. C'est un échange de 30 minutes — on parle de votre activité, de vos processus, de ce qui vous prend du temps. À la fin, on vous dit honnêtement si l'IA peut vous aider et de quelle façon. Si ce n'est pas le cas, on vous le dit aussi.
           </div>
         </details>
         <details class="faq-item">
@@ -1377,7 +1395,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Non. C'est précisément pour ça qu'on est là. On part de votre réalité terrain, pas d'une stack technique idéale. Les outils déployés sont choisis pour être utilisables par vos équipes sans formation longue — et on reste disponibles pendant les 3 premiers mois pour les ajustements.
+            Non. C'est justement le rôle de .kairos. On part de votre organisation telle qu'elle est, pas d'un état idéal. Les solutions déployées sont choisies pour être opérationnelles rapidement par vos équipes — et nous restons disponibles pendant les trois premiers mois pour accompagner la prise en main.
           </div>
         </details>
         <details class="faq-item">
@@ -1386,7 +1404,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Un livrable de 5 à 10 pages comprenant : un constat structuré de votre organisation, les points de friction identifiés, 2 à 4 cas d'usages IA concrets avec estimation de ROI, et un devis chiffré pour la suite. Vous pouvez vous arrêter là — le diagnostic a de la valeur en lui-même.
+            Un document de 5 à 10 pages comprenant : un état des lieux structuré, les points de friction prioritaires, deux à quatre cas d'usage IA concrets avec estimation du ROI, et un devis chiffré pour la suite. Vous pouvez vous en tenir au diagnostic — il a de la valeur indépendamment de la suite.
           </div>
         </details>
         <details class="faq-item">
@@ -1395,7 +1413,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Pour un projet standard (1 cas d'usage simple), comptez 2 à 6 semaines entre le lancement et la mise en production. On commence par le cas à plus fort impact, on teste, on ajuste — puis vos équipes prennent la main progressivement.
+            Pour un projet standard — un premier cas d'usage ciblé — comptez deux à six semaines entre le démarrage et la mise en production. On commence par le cas à plus fort impact, on itère, on ajuste, puis vos équipes prennent progressivement la main.
           </div>
         </details>
         <details class="faq-item">
@@ -1404,7 +1422,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            C'est vous qui décidez où vont vos données. On peut déployer des IA locales hébergées chez vous ou votre prestataire (OVH, Hostinger…), ou utiliser des services externes (Anthropic, OpenAI) si vous le souhaitez. Le choix est documenté et acté dans le diagnostic avant toute implantation.
+            Vous décidez. On peut déployer des solutions hébergées dans votre infrastructure ou chez un prestataire de votre choix (OVH, Hostinger…), ou faire appel à des services cloud (Anthropic, OpenAI) selon vos préférences. L'hébergement est documenté et validé avec vous avant toute mise en place.
           </div>
         </details>
         <details class="faq-item">
@@ -1413,7 +1431,7 @@
             <span class="faq-icon" aria-hidden="true">+</span>
           </summary>
           <div class="faq-answer">
-            Les 3 premiers mois sont inclus dans tout déploiement : 1 appel mensuel, ajustements mineurs, tableau de bord de suivi. Après, vous êtes libres. Si vous voulez continuer, un abonnement mensuel à 250–300 €/mois est disponible. Aucune obligation.
+            Tout déploiement inclut trois mois de suivi : un point mensuel, des ajustements à la marge et un tableau de bord partagé. Au-delà, vous êtes libres. Si vous souhaitez prolonger l'accompagnement, un abonnement mensuel à 250–300 € est proposé — sans engagement.
           </div>
         </details>
       </div>
@@ -1429,9 +1447,9 @@
         <p class="section-sub">La clarté fait partie de notre méthode.</p>
       </div>
       <div class="limits-grid" role="list">
-        <div class="limit-item" role="listitem">Grosses entreprises avec compétences tech internes</div>
+        <div class="limit-item" role="listitem">Grandes entreprises avec des équipes techniques en interne</div>
         <div class="limit-item" role="listitem">Promesses de ROI chiffré à l'avance</div>
-        <div class="limit-item" role="listitem">Solutions miracles pré-formatées</div>
+        <div class="limit-item" role="listitem">Solutions génériques sans adaptation à votre contexte</div>
         <div class="limit-item" role="listitem">Projets en dessous de 500 € hors formation</div>
       </div>
     </div>
@@ -1445,7 +1463,7 @@
       </div>
       <p class="contact-tagline">Une opportunité commence toujours par un échange.</p>
       <h2 class="contact-title">Commencez par<br>un échange<span class="dot">.</span></h2>
-      <p class="contact-sub">30 minutes. Gratuit. Sans engagement. On regarde ensemble si l'IA peut vraiment vous aider — et par où commencer.</p>
+      <p class="contact-sub">30 minutes, gratuites, sans engagement. On évalue ensemble si l'IA peut vous apporter une valeur réelle — et par où commencer concrètement.</p>
       <a href="mailto:contact@kairos.fr" class="btn">Prendre contact →</a>
     </div>
   </section>
