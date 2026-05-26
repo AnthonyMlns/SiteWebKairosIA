@@ -423,6 +423,74 @@
     .marker-no  { color: var(--red); }
 
     /* ============================================================
+       CAS D'USAGE
+    ============================================================ */
+    .usecases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: var(--border);
+    }
+
+    .usecase-col {
+      padding: 36px 32px;
+      border-right: var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .usecase-col:last-child { border-right: none; }
+
+    .usecase-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+    .usecase-tag-fast { color: var(--red); }
+    .usecase-tag-mid  { color: var(--gray-700); }
+    .usecase-tag-long { color: var(--gray-500); }
+
+    .usecase-col h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+
+    .usecase-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .usecase-list li {
+      display: flex;
+      gap: 12px;
+    }
+    .usecase-list li .marker {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      margin-top: 1px;
+      font-weight: 500;
+    }
+    .usecase-list li .marker-yes { color: var(--black); }
+
+    .usecase-list li strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 2px;
+    }
+    .usecase-list li span {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.55;
+    }
+
+    /* ============================================================
        MÉTHODE
     ============================================================ */
     .methode-steps { display: flex; flex-direction: column; }
@@ -1031,6 +1099,10 @@
 
       .offres-grid { grid-template-columns: 1fr 1fr; }
 
+      .usecases-grid { grid-template-columns: 1fr; }
+      .usecase-col { border-right: none; border-bottom: var(--border); }
+      .usecase-col:last-child { border-bottom: none; }
+
       .sim-panels { grid-template-columns: 1fr; }
       .sim-left { border-right: none; border-bottom: var(--border); }
       .sim-right { min-height: auto; }
@@ -1060,6 +1132,11 @@
       /* Cible */
       .cible-grid { grid-template-columns: 1fr; }
       .cible-col:first-child { border-right: none; border-bottom: var(--border); }
+
+      /* Cas d'usage */
+      .usecases-grid { grid-template-columns: 1fr; }
+      .usecase-col { border-right: none; border-bottom: var(--border); }
+      .usecase-col:last-child { border-bottom: none; }
 
       /* Méthode */
       .step { grid-template-columns: 28px 1fr; gap: 14px; }
@@ -1102,6 +1179,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo">kAIros<span class="dot">.</span></a>
       <ul class="nav-links" role="list">
+        <li><a href="#usecases">Cas d'usage</a></li>
         <li><a href="#methode">Méthode</a></li>
         <li><a href="#offres">Offres</a></li>
         <li><a href="#simulateur">Simulateur</a></li>
@@ -1115,6 +1193,7 @@
       </button>
     </div>
     <nav class="nav-drawer" id="nav-drawer" aria-label="Menu mobile">
+      <a href="#usecases">Cas d'usage</a>
       <a href="#methode">Méthode</a>
       <a href="#offres">Offres</a>
       <a href="#simulateur">Simulateur</a>
@@ -1169,6 +1248,106 @@
             <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les grandes entreprises disposant d'équipes techniques en interne.</span></li>
             <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les entreprises en difficulté structurelle.</span></li>
             <li><span class="marker marker-no" aria-hidden="true">✕</span><span>Les structures qui recherchent une solution prête à l'emploi sans vouloir s'y impliquer.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CAS D'USAGE ===== -->
+  <section id="usecases" class="section" aria-label="Cas d'usage concrets">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Cas d'usage</span>
+        <h2 class="section-title">Ce qu'on peut faire concrètement.</h2>
+        <p class="section-sub">De l'automatisation à l'outil sur mesure — chaque mission part d'un besoin réel, pas d'une technologie.</p>
+      </div>
+      <div class="usecases-grid">
+        <div class="usecase-col">
+          <div>
+            <span class="usecase-tag usecase-tag-fast">ROI rapide</span>
+            <h3>Gagner du temps</h3>
+          </div>
+          <ul class="usecase-list" role="list">
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Comptes rendus automatiques</strong>
+                <span>Réunions, appels, visios → notes structurées, actions et relances générées automatiquement.</span>
+              </div>
+            </li>
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Tri &amp; routage d'emails</strong>
+                <span>Support client, demandes de devis : classification automatique, réponse draft, assignation.</span>
+              </div>
+            </li>
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Extraction documentaire</strong>
+                <span>Factures, bulletins, contrats → données structurées sans saisie manuelle.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="usecase-col">
+          <div>
+            <span class="usecase-tag usecase-tag-mid">ROI confirmé</span>
+            <h3>Amplifier l'activité</h3>
+          </div>
+          <ul class="usecase-list" role="list">
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Alertes &amp; veille automatisée</strong>
+                <span>Surveillance prix concurrents, réglementation, appels d'offres, avis clients — tout remonté au fil de l'eau.</span>
+              </div>
+            </li>
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Analyse de données commerciales</strong>
+                <span>Segmentation client, prévision d'attrition, optimisation du panier moyen.</span>
+              </div>
+            </li>
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Génération de devis &amp; propositions</strong>
+                <span>Template + contexte client + historique — un devis personnalisé prêt en quelques minutes.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="usecase-col">
+          <div>
+            <span class="usecase-tag usecase-tag-long">ROI durable</span>
+            <h3>Construire sur mesure</h3>
+          </div>
+          <ul class="usecase-list" role="list">
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Outils spécifiques internalisés</strong>
+                <span>Petit logiciel métier sur mesure : calculateur, planning intelligent, validateur de conformité.</span>
+              </div>
+            </li>
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Agent interne de connaissances</strong>
+                <span>« Pose ta question à ta doc » : procédures, historique, notes — réponse instantanée pour l'équipe.</span>
+              </div>
+            </li>
+            <li>
+              <span class="marker marker-yes" aria-hidden="true">✦</span>
+              <div>
+                <strong>Site web augmenté par l'IA</strong>
+                <span>Contenu généré, personnalisation, A/B testing dynamique — un site qui évolue avec vos clients.</span>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -1518,6 +1697,7 @@
         '.tarifs-table tbody tr, .tarifs-note, ' +
         '.sim-left, .sim-right, ' +
         '.faq-item, .limit-item, ' +
+        '.usecase-col, ' +
         '.contact-inner > *'
       ).forEach(el => { el.classList.add('anim'); obs.observe(el); });
 

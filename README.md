@@ -17,13 +17,14 @@ Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/
 1. Navbar sticky (logo Inter 800, drawer mobile 100vh)
 2. Hero — 100vh, centrage vertical, eyebrow « Accompagnement à la transformation par l'IA », quote « Posture » ancrée en bas
 3. Cible — pour qui / pour qui pas
-4. Méthode — 4 étapes (Comprendre · Prioriser · Expérimenter · Ancrer)
-5. Offres — 3 cartes mod box avec tarifs *à partir de* + note Gouvernance des données
-6. Simulateur ROI — 2 panneaux (structure + sliders | métriques dark)
-7. FAQ — 6 questions, accordéon natif `<details>`
-8. Limites — ce que kAIros. ne fait pas
-9. Contact — fond gris-100, CTA « Parlons de votre kairos »
-10. Footer
+4. Cas d'usage — 9 cas concrets de ROI (automatisation, analyse, outils sur mesure)
+5. Méthode — 4 étapes (Comprendre · Prioriser · Expérimenter · Ancrer)
+6. Offres — 3 cartes mod box avec tarifs *à partir de* + note Gouvernance des données
+7. Simulateur ROI — 2 panneaux (structure + sliders | métriques dark)
+8. FAQ — 6 questions, accordéon natif `<details>`
+9. Limites — ce que kAIros. ne fait pas
+10. Contact — fond gris-100, CTA « Parlons de votre kairos »
+11. Footer
 
 ## Sections — `about.html`
 
