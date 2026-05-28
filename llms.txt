@@ -8,16 +8,16 @@ L'activité s'adresse aux structures de 1 à 50 collaborateurs qui souhaitent in
 
 ## Services
 
-- [Diagnostic IA](https://anthonymlns.github.io/SiteWebProxIA/#offres): Audit des processus, identification des opportunités d'automatisation, feuille de route priorisée. À partir de 900 €.
-- [Déploiement accompagné](https://anthonymlns.github.io/SiteWebProxIA/#offres): Mise en œuvre opérationnelle d'outils IA adaptés à la structure, de la sélection à la prise en main. À partir de 2 400 €.
-- [Formation & montée en compétences](https://anthonymlns.github.io/SiteWebProxIA/#offres): Ateliers pratiques pour dirigeants et équipes, adaptés au niveau et aux usages réels. À partir de 600 €.
+- [Diagnostic IA](https://anthonymlns.github.io/SiteWebKairosIA/#offres): Audit des processus, identification des opportunités d'automatisation, feuille de route priorisée. À partir de 900 €.
+- [Déploiement accompagné](https://anthonymlns.github.io/SiteWebKairosIA/#offres): Mise en œuvre opérationnelle d'outils IA adaptés à la structure, de la sélection à la prise en main. À partir de 2 400 €.
+- [Formation & montée en compétences](https://anthonymlns.github.io/SiteWebKairosIA/#offres): Ateliers pratiques pour dirigeants et équipes, adaptés au niveau et aux usages réels. À partir de 600 €.
 
 ## Méthode
 
-- [Comprendre](https://anthonymlns.github.io/SiteWebProxIA/#methode): Écoute du contexte métier, cartographie des flux et identification des irritants avant toute préconisation.
-- [Prioriser](https://anthonymlns.github.io/SiteWebProxIA/#methode): Classement des opportunités selon l'impact réel, la faisabilité et le coût — pour agir là où ça compte.
-- [Expérimenter](https://anthonymlns.github.io/SiteWebProxIA/#methode): Mise en place de pilotes concrets et mesurables avant toute généralisation.
-- [Ancrer](https://anthonymlns.github.io/SiteWebProxIA/#methode): Transfert de compétences et documentation pour que l'équipe reste autonome après la mission.
+- [Comprendre](https://anthonymlns.github.io/SiteWebKairosIA/#methode): Écoute du contexte métier, cartographie des flux et identification des irritants avant toute préconisation.
+- [Prioriser](https://anthonymlns.github.io/SiteWebKairosIA/#methode): Classement des opportunités selon l'impact réel, la faisabilité et le coût — pour agir là où ça compte.
+- [Expérimenter](https://anthonymlns.github.io/SiteWebKairosIA/#methode): Mise en place de pilotes concrets et mesurables avant toute généralisation.
+- [Ancrer](https://anthonymlns.github.io/SiteWebKairosIA/#methode): Transfert de compétences et documentation pour que l'équipe reste autonome après la mission.
 
 ## Cible
 
@@ -36,6 +36,6 @@ Secteurs concernés : commerce, services, artisanat, professions libérales, ind
 
 ## Optional
 
-- [Simulateur ROI](https://anthonymlns.github.io/SiteWebProxIA/#simulateur): Estimateur en ligne du retour sur investissement d'une mission IA selon la taille de la structure, les heures perdues en tâches répétitives et le coût horaire moyen.
-- [FAQ](https://anthonymlns.github.io/SiteWebProxIA/#faq): Réponses aux questions fréquentes — différence avec un intégrateur, délais, prérequis techniques, confidentialité des données.
-- [Limites](https://anthonymlns.github.io/SiteWebProxIA/#limites): Cas où kAIros. n'est pas le bon interlocuteur — projets nécessitant une DSI, budgets inférieurs à 500 €, refonte SI complète.
+- [Simulateur ROI](https://anthonymlns.github.io/SiteWebKairosIA/#simulateur): Estimateur en ligne du retour sur investissement d'une mission IA selon la taille de la structure, les heures perdues en tâches répétitives et le coût horaire moyen.
+- [FAQ](https://anthonymlns.github.io/SiteWebKairosIA/#faq): Réponses aux questions fréquentes — différence avec un intégrateur, délais, prérequis techniques, confidentialité des données.
+- [Limites](https://anthonymlns.github.io/SiteWebKairosIA/#limites): Cas où kAIros. n'est pas le bon interlocuteur — projets nécessitant une DSI, budgets inférieurs à 500 €, refonte SI complète.
