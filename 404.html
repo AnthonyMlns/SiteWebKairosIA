@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>kAIros. · Page non trouvée</title>
+  <meta name="description" content="La page que vous cherchez n'existe pas ou a été déplacée. Retournez à l'accueil.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.kairos.fr/404.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:      #cc2c22;
+      --black:    #0c0c0c;
+      --gray-900: #1a1a1a;
+      --gray-700: #3d3d3d;
+      --gray-500: #6b6b6b;
+      --gray-200: #e2e2e0;
+      --gray-100: #f5f5f3;
+      --white:    #ffffff;
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+      --border:    1px solid var(--gray-200);
+
+      --max-w: 1120px;
+      --pad-x: 48px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--white);
+      color: var(--black);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .label {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      display: inline-block;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 11px 22px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--gray-900); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--black);
+      border: var(--border);
+    }
+    .btn-outline:hover { background: var(--gray-100); }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: var(--border);
+      transition: box-shadow 0.2s;
+    }
+    nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+    }
+
+    .nav-logo {
+      font-family: var(--font-sans);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.045em;
+      flex-shrink: 0;
+    }
+    .nav-logo .dot { color: var(--red); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13.5px;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--black); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      height: 1.5px;
+      background: var(--black);
+      border-radius: 1px;
+      transition: transform 0.25s, opacity 0.25s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--white);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 32px var(--pad-x);
+    }
+    .nav-drawer.open {
+      display: flex;
+      animation: drawerIn 0.22s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .nav-drawer a:not(.btn) {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      text-decoration: none;
+      padding: 14px 0;
+      transition: color 0.15s;
+    }
+    .nav-drawer a:not(.btn):hover { color: var(--red); }
+    .nav-drawer .btn {
+      margin-top: 16px;
+      justify-content: center;
+      width: 100%;
+      max-width: 280px;
+    }
+    .nav-drawer-close {
+      position: absolute;
+      top: 16px;
+      right: var(--pad-x);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: var(--black);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+    .nav-drawer-close:hover { color: var(--red); }
+
+    /* ===== HERO 404 ===== */
+    #hero-404 {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 0;
+      border-bottom: var(--border);
+    }
+
+    .hero-404-inner {
+      text-align: center;
+      max-width: 560px;
+    }
+
+    .hero-404-eyebrow {
+      margin-bottom: 24px;
+    }
+
+    .hero-404-code {
+      font-family: var(--font-sans);
+      font-size: clamp(96px, 20vw, 180px);
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      line-height: 0.88;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+    .hero-404-code span { color: var(--red); }
+
+    .hero-404-title {
+      font-size: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .hero-404-text {
+      font-size: 15px;
+      color: var(--gray-500);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-404-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: var(--border);
+      padding: 28px 0;
+      background: var(--white);
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--black);
+      text-decoration: none;
+      letter-spacing: -0.045em;
+    }
+    .footer-logo .dot { color: var(--red); }
+    .footer-copy { font-size: 12.5px; color: var(--gray-500); }
+    .footer-links { display: flex; gap: 22px; list-style: none; }
+    .footer-links a {
+      font-size: 12.5px;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--black); }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes drawerIn {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    nav                   { animation: heroIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+    .hero-404-eyebrow     { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.06s both; }
+    .hero-404-code        { animation: heroIn 0.80s cubic-bezier(0.16,1,0.3,1) 0.13s both; }
+    .hero-404-title       { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.26s both; }
+    .hero-404-text        { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.36s both; }
+    .hero-404-actions     { animation: heroIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.46s both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      nav, .hero-404-eyebrow, .hero-404-code, .hero-404-title,
+      .hero-404-text, .hero-404-actions, .nav-drawer.open {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      :root { --pad-x: 32px; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --pad-x: 20px; }
+
+      .nav-links, .nav-cta-desktop { display: none; }
+      .nav-hamburger { display: flex; }
+
+      #hero-404 { padding: 56px 0; }
+
+      .hero-404-actions { flex-direction: column; align-items: stretch; }
+      .hero-404-actions .btn { justify-content: center; }
+
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">kAIros<span class="dot">.</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="cas-dusage.html">Cas d'usage</a></li>
+        <li><a href="simulateur.html">Simulateur</a></li>
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="about.html">À propos</a></li>
+      </ul>
+      <a href="mailto:contact@kairos.fr" class="btn nav-cta-desktop">CONTACT</a>
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-drawer" id="nav-drawer" aria-label="Menu mobile">
+      <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Fermer le menu">×</button>
+      <a href="index.html">Accueil</a>
+      <a href="cas-dusage.html">Cas d'usage</a>
+      <a href="simulateur.html">Simulateur</a>
+      <a href="index.html#methode">Méthode</a>
+      <a href="about.html">À propos</a>
+      <a href="mailto:contact@kairos.fr" class="btn">CONTACT</a>
+    </nav>
+  </nav>
+
+  <!-- ===== HERO 404 ===== -->
+  <section id="hero-404" aria-label="Page non trouvée">
+    <div class="container hero-404-inner">
+      <div class="hero-404-eyebrow">
+        <span class="label">Erreur 404</span>
+      </div>
+      <h1 class="hero-404-code">4<span>0</span>4</h1>
+      <p class="hero-404-title">Page non trouvée<span class="dot">.</span></p>
+      <p class="hero-404-text">Le kairos que vous cherchiez s'est envolé.<br>Cette page n'existe pas ou a été déplacée.</p>
+      <div class="hero-404-actions">
+        <a href="index.html" class="btn btn-red">Retour à l'accueil →</a>
+        <a href="index.html#contact" class="btn btn-outline">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <a href="index.html" class="footer-logo">kAIros<span class="dot">.</span></a>
+      <p class="footer-copy">© 2026 kAIros. Conseil IA pour TPE/PME</p>
+      <ul class="footer-links" role="list">
+        <li><a href="index.html#methode">Méthode</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="mailto:contact@kairos.fr">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== NAV SCROLL ===== */
+    (function () {
+      const nav = document.querySelector('nav');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+      }, { passive: true });
+    })();
+
+    /* ===== HAMBURGER ===== */
+    (function () {
+      const btn    = document.getElementById('nav-toggle');
+      const drawer = document.getElementById('nav-drawer');
+      if (!btn || !drawer) return;
+
+      function close() {
+        drawer.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      function open() {
+        drawer.classList.add('open');
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
+      drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      const closeBtn = document.getElementById('nav-drawer-close');
+      if (closeBtn) closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+
+</body>
+</html>
