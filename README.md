@@ -1,41 +1,63 @@
-# ProxIA — Site Web Landing Page
+# KairosIA — Site Web Landing Page
 
-Landing page pour **ProxIA**, cabinet de conseil en implémentation IA pour TPE/PME françaises.
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-brightgreen)
+![Last Commit](https://img.shields.io/github/last-commit/AnthonyMlns/SiteWebKairosIA)
 
-> Proximité + IA → ROI concret, approche humaine et pédagogique.
+Landing page pour **kAIros.**, cabinet de conseil en transformation IA pour TPE/PME françaises.
+
+> Du bon moment à la bonne action — accompagnement opérationnel, technique et pédagogique de la découverte à la mise en œuvre concrète.
+
+## Description
+
+Site vitrine statique (HTML/CSS/JS vanilla) avec quatre pages :
+- **`index.html`** — page d'accueil (hero, cible, méthode, FAQ, contact)
+- **`simulateur.html`** — simulateur de ROI IA (2 panneaux, sliders, métriques)
+- **`cas-dusage.html`** — cas d'usage concrets (3 colonnes : gagner du temps, amplifier l'activité, construire sur mesure)
+- **`about.html`** — À propos (étymologie, vision, posture, engagement, CTA)
 
 ## Stack
 
-- HTML/CSS/JS vanilla — fichier unique `index.html`
-- Design system dark : `#080809` background · `#f97316` orange accent · Inter (Google Fonts)
-- SEO : schema.org JSON-LD (Organization, FAQPage, Service, AggregateRating) · Open Graph · Twitter Card
-- Responsive : hamburger menu mobile · 5 breakpoints (1024 / 900 / 768 / 640 / 380 px)
+- HTML/CSS/JS vanilla
+- Design system : tokens CSS (variables) · [`design-system.md`](design-system.md) · `#cc2c22` rouge accent · Inter 800 (titres) + JetBrains Mono (labels)
+- SEO : schema.org JSON-LD (Organization, LocalBusiness, ProfessionalService) · Open Graph · Twitter Card · `llms.txt`
+- Responsive : hamburger menu mobile full-screen · breakpoints 900 px / 640 px
+- Animations : `heroIn` page-load stagger · IntersectionObserver scroll · `prefers-reduced-motion`
 
-## Sections
+## Prérequis
 
-1. Navbar sticky
-2. Hero — orbe CSS 3D, badges flottants (47+ PME · 3.2× ROI)
-3. Stats strip (4 métriques)
-4. Pourquoi ProxIA — 6 cards + pain points
-5. Nos Services — diagnostic offert (featured) + 3 cards
-6. Notre Méthode — 4 étapes
-7. Calculateur ROI — sliders interactifs TPE/PME
-8. Témoignages — 3 cards + strip chiffrée
-9. FAQ — 6 questions accordion
-10. CTA Final
-11. Footer
+- Un navigateur web moderne (Chrome, Firefox, Safari, Edge)
+- Aucun serveur ni dépendance requis
 
-## Déploiement
+## Installation
 
-| Environnement | URL | Statut |
-|---|---|---|
-| GitHub Pages (preview) | https://anthonymlns.github.io/SiteWebProxIA/ | ✅ En ligne |
-| Vercel (production) |  | ⏳ À venir |
+## Installation
+
+```bash
+git clone https://github.com/AnthonyMlns/SiteWebKairosIA.git
+cd SiteWebKairosIA
+```
+
+## Utilisation
+
+Ouvrez `index.html` dans votre navigateur :
+
+```bash
+open index.html
+```
+
+## Structure du projet
 
 ## Roadmap
 
-Voir [Issues](../../issues) pour le suivi des releases.
+- [x] **MVP** — Landing page statique
+- [x] **v2 — Mise en production** — about.html, simulateur ROI, cas-dusage.html, rebranding kAIros., design system, déploiement GitHub Pages
+- [ ] **v2.1** — Pages services dédiées + témoignages clients
+- [ ] **v3** — Back-office CMS léger + formulaire de contact fonctionnel
 
-## Lancer en local
+## Contribuer
 
-Ouvrir `index.html` dans un navigateur — aucune dépendance, aucun build requis.
+Les contributions ne sont pas ouvertes pour le moment. Ce projet est un site vitrine privé.
+
+## Licence
+
+All Rights Reserved — voir le fichier [`LICENSE`](LICENSE).

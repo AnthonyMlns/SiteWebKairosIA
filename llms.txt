@@ -1,0 +1,41 @@
+﻿# kAIros.
+
+> Cabinet de conseil en transformation IA pour les TPE et PME françaises. Accompagnement opérationnel, technique et pédagogique — de la découverte au déploiement concret.
+
+kAIros. est une activité de conseil indépendante basée à Montpellier (Occitanie, France), fondée en 2025. Le nom est une référence au concept grec du « bon moment » — l'idée qu'une opportunité de transformation ne se présente qu'une fois, et qu'il faut être prêt à la saisir.
+
+L'activité s'adresse aux structures de 1 à 50 collaborateurs qui souhaitent intégrer l'intelligence artificielle dans leurs opérations sans se perdre dans la technique. L'approche est pragmatique : pas de déploiement systématique, pas de solution toute faite — un regard extérieur, des questions, et des actions concrètes adaptées à chaque contexte.
+
+## Services
+
+- [Diagnostic IA](https://anthonymlns.github.io/SiteWebProxIA/#offres): Audit des processus, identification des opportunités d'automatisation, feuille de route priorisée. À partir de 900 €.
+- [Déploiement accompagné](https://anthonymlns.github.io/SiteWebProxIA/#offres): Mise en œuvre opérationnelle d'outils IA adaptés à la structure, de la sélection à la prise en main. À partir de 2 400 €.
+- [Formation & montée en compétences](https://anthonymlns.github.io/SiteWebProxIA/#offres): Ateliers pratiques pour dirigeants et équipes, adaptés au niveau et aux usages réels. À partir de 600 €.
+
+## Méthode
+
+- [Comprendre](https://anthonymlns.github.io/SiteWebProxIA/#methode): Écoute du contexte métier, cartographie des flux et identification des irritants avant toute préconisation.
+- [Prioriser](https://anthonymlns.github.io/SiteWebProxIA/#methode): Classement des opportunités selon l'impact réel, la faisabilité et le coût — pour agir là où ça compte.
+- [Expérimenter](https://anthonymlns.github.io/SiteWebProxIA/#methode): Mise en place de pilotes concrets et mesurables avant toute généralisation.
+- [Ancrer](https://anthonymlns.github.io/SiteWebProxIA/#methode): Transfert de compétences et documentation pour que l'équipe reste autonome après la mission.
+
+## Cible
+
+kAIros. accompagne les TPE et PME (1–50 collaborateurs) qui :
+- perdent du temps sur des tâches répétitives à faible valeur ajoutée
+- voient l'IA comme une opportunité mais ne savent pas par où commencer
+- ont besoin d'un interlocuteur technique et opérationnel, pas d'un intégrateur généraliste
+
+Secteurs concernés : commerce, services, artisanat, professions libérales, industrie légère.
+
+## Contact
+
+- Email : contact@kairos.fr
+- Localisation : Montpellier, Occitanie, France (interventions en présentiel région Occitanie, distanciel toute France)
+- Premier échange : gratuit, 30 minutes, sans engagement
+
+## Optional
+
+- [Simulateur ROI](https://anthonymlns.github.io/SiteWebProxIA/#simulateur): Estimateur en ligne du retour sur investissement d'une mission IA selon la taille de la structure, les heures perdues en tâches répétitives et le coût horaire moyen.
+- [FAQ](https://anthonymlns.github.io/SiteWebProxIA/#faq): Réponses aux questions fréquentes — différence avec un intégrateur, délais, prérequis techniques, confidentialité des données.
+- [Limites](https://anthonymlns.github.io/SiteWebProxIA/#limites): Cas où kAIros. n'est pas le bon interlocuteur — projets nécessitant une DSI, budgets inférieurs à 500 €, refonte SI complète.
