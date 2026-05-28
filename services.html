@@ -240,6 +240,24 @@
       width: 100%;
       max-width: 280px;
     }
+    .nav-drawer-close {
+      position: absolute;
+      top: 16px;
+      right: var(--pad-x);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: var(--black);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+    .nav-drawer-close:hover { color: var(--red); }
     .nav-drawer.open {
       display: flex;
       animation: drawerIn 0.22s cubic-bezier(0.16,1,0.3,1) both;
@@ -840,6 +858,7 @@
       </button>
     </div>
     <nav class="nav-drawer" id="nav-drawer" aria-label="Menu mobile">
+      <button class="nav-drawer-close" id="nav-drawer-close" aria-label="Fermer le menu">×</button>
       <a href="index.html">Accueil</a>
       <a href="cas-dusage.html">Cas d'usage</a>
       <a href="services.html">Services</a>
@@ -1140,6 +1159,8 @@
 
       btn.addEventListener('click', () => drawer.classList.contains('open') ? close() : open());
       drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+      const closeBtn = document.getElementById('nav-drawer-close');
+      if (closeBtn) closeBtn.addEventListener('click', close);
       document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
     })();
 
